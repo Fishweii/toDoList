@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link href="all.css" rel="stylesheet">
+    <script defer src="all.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script defer src="change.js"></script>
+</head>
+
+<body onload="load()">
+    <header class="header">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#" id="tasks" onclick="changeTab(this)">My Tasks</a>
+                    <hr id="taskshr">
+                </li>
+                <li><a href="#" id="progress" onclick="changeTab(this)">In Progress</a>
+                    <hr id="progresshr" style="display: none;">
+                </li>
+                <li><a href="#" id="complete" onclick="changeTab(this)">Completed</a>
+                    <hr id="completehr" style="display: none;">
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="addTask" id="add">
+        <section class="add" onclick="showCreate()">
+            + Add Task
+        </section>
+    </div>
+    <section class="create" id="create">
+        <section class="title">
+            <input type="checkbox" class="check">
+            <input type="text" class="mission" placeholder="Type something Here...">
+            <span class="star">
+                <i class="far fa-star"></i>
+                <i class="fas fa-pen"></i>
+            </span>
+        </section>
+        <hr>
+        <section class="new">
+            <section class="deadline">
+                <i class="far fa-calendar-alt"></i>
+                <span>Deadline</span><br>
+                <input type="date" class="date">
+                <input type="time" class="time">
+            </section>
+
+            <section class="file">
+                <i class="far fa-file"></i>
+                <span>File</span>
+                <input type="file" id="upload" style="display: none;">
+                <section class="plus" onclick="upload()"><a>+</a></section>
+            </section>
+
+            <section class="comment">
+                <i class="far fa-comment-dots"></i>
+                <span>Comment</span>
+                <textarea class="input" placeholder="  Type your memo here..."></textarea>
+            </section>
+        </section>
+        <section class="cancel" id="addcancel" onclick="addcancel()"><a>X Cancel</a></section>
+        <section class="fadd" onclick="createTask()"><a>+ Add Task</a></section>
+    </section>
+
+    <main class="task" id="alltask">
+        <!--<section class="content">
+            <section class="title">
+                <input type="checkbox" class="check" id="check-1" onclick="clickCheck(1)">
+                <span class="mission">Type Something Here...</span>
+                <span class="star">
+                    <i class="fas fa-star" id="star-1" onclick="changeStar(1)"></i>
+                    <i class="fas fa-pen" id="edit-1" onclick="edit(1)"></i>
+                </span>
+            </section>
+            <section class="tab">
+                <i class="far fa-calendar-alt"></i>
+                <span class="date">
+                    5/14
+                </span>
+                <i class="far fa-file"></i>
+                <i class="far fa-comment-dots"></i>
+            </section>
+        </section>
+        <section class="content">
+            <section class="title">
+                <input type="checkbox" class="check">
+                <span class="mission">Type Something Here...</span>
+                <span class="star">
+                    <i class="fas fa-star" id="star-2" onclick="changeStar(2)"></i>
+                    <i class="fas fa-pen"></i>
+                </span>
+            </section>
+            <section class="tab">
+                <i class="far fa-file"></i>
+                <i class="far fa-comment-dots"></i>
+            </section>
+        </section>
+        <section class="nofirst">
+            <section class="title">
+                <input type="checkbox" class="check">
+                <span class="mission">Type Something Here...</span>
+                <span class="star">
+                    <i class="far fa-star" id="star-3" onclick="changeStar(3)"></i>
+                    <i class="fas fa-pen"></i>
+                </span>
+            </section>
+            <section class="tab">
+                <i class="far fa-calendar-alt"></i>
+                <span class="date">
+                    6/18
+                </span>
+            </section>
+        </section>
+        <section class="nofirst">
+            <section class="title">
+                <input type="checkbox" class="check">
+                <span class="mission">Type Something Here...</span>
+                <span class="star">
+                    <i class="far fa-star" id="star-4" onclick="changeStar(4)"></i>
+                    <i class="fas fa-pen"></i>
+                </span>
+            </section>
+            <section class="tab">
+                <i class="far fa-file"></i>
+            </section>
+        </section>
+        <section class="complete">
+            <section class="title">
+                <input type="checkbox" class="check" checked>
+                <span class="mission">Type Something Here...</span>
+                <span class="star">
+                    <i class="far fa-star"></i>
+                    <i class="fas fa-pen"></i>
+                </span>
+            </section>-->
+    </main>
+</body>
+
+</html>

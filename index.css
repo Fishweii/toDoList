@@ -1,0 +1,465 @@
+body{
+    background-color: #E1E1E1;
+}
+.header{
+    background-color: #4A90E2;
+    width: 100%;
+    font-size: 0px;
+}
+.header .navbar{
+    width: 100%;
+    height:76px;
+    box-sizing: border-box;
+}
+.header .navbar ul{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    padding-top: 24px;
+    box-sizing: border-box;
+}
+.header .navbar ul li{
+    width: 220px;
+    text-align: center;
+    position: relative;
+}
+.header .navbar ul li a{
+    font-size: 24px;
+    color: #00408B;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+.header .navbar ul li hr{
+    width: 160px;
+    height: 5px;
+    background-color: #00408B;
+    border: none;
+    bottom: 0;
+    left: 30px;
+    position: absolute;
+}
+.header .navbar ul li .click{
+    color: #FFFFFF;
+    font-weight: 500;
+}
+.addTask{
+    width: 620px;
+    background-color: #FFFFFF;
+    border: 2px solid #c8c8c8;
+    border-radius: 5px;
+    margin: 24px auto;
+    padding: 19px 33px;
+    box-sizing: border-box;
+}
+.addTask .add{
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    color: #C8C8C8;
+    text-align: left;
+}
+.create{
+    width: 620px;
+    margin: auto;
+    box-sizing: border-box;
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    font-size: 0px;
+    margin-top: 24px;
+}
+.create hr{
+    height: 3px;
+    background-color: #c8c8c8;
+    border: none;
+}
+.create .title{
+    padding: 24px 32px 15px;
+}
+.create .title .check{
+    display: inline-block;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+}
+.create .title .mission{
+    color: #000000;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    width:248px;
+    border: none;
+    background-color: #F2F2F2;
+}
+.mission::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #000000;
+    opacity: 1; /* Firefox */
+  }
+.create .title .star{
+    font-size: 24px;
+    float: right;
+}
+.create .title .star .fa-star{
+    color: #000000;   
+}
+.create .title .star .fa-pen{
+    color: #4A90E2;
+    padding-left: 20px;
+}
+.new {
+    background-color: #f2f2f2;
+}
+.new .deadline{
+    padding: 25px 72px 0px 72px;
+}
+.new .deadline svg{
+    font-size: 16px;
+}
+.new .deadline span{
+    padding-left: 9px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+.new .deadline .date{
+    display: inline-block;
+    width: 162px;
+    height: 25px;
+    margin-left: 23px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    border-radius: 2px;
+    border: none;
+    margin-top: 10px;
+}
+.new .deadline .time{
+    display: inline-block;
+    width: 162px;
+    height: 25px;
+    margin-left: 8px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    border-radius: 2px;
+    border: none;
+}
+
+.new .file{
+    padding: 25px 72px 0px 72px;
+}
+.new .file svg{
+    font-size: 16px;
+}
+.new .file .plus{
+    width: 32px;
+    height: 32px;
+    margin-left: 23px;
+    background-color: #c8c8c8;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+.new .file .plus a{
+    color: white;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    margin-left: 8px;
+}
+.new .file span{
+    padding-left: 9px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+.new .comment{
+    padding: 25px 72px 25px 72px;
+}
+.new .comment svg{
+    font-size: 16px;
+}
+.new .comment span{
+    padding-left: 9px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+.new .comment .input{
+    width: 440px;
+    height: 120px;
+    resize: none;
+    margin-left: 23px;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    border: none;
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+}
+.create .cancel{
+    display: inline-block;
+    background-color: #FFFFFF;
+    width: 310px;
+    height: 60px;
+    text-align: center;
+    border-bottom-left-radius: 2px;
+}
+.create .cancel a{
+    display: block;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #D0021B;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.create .fadd{
+    display: inline-block;
+    background-color: #4A90E2;
+    width: 310px;
+    height: 60px;
+    text-align: center;
+    border-bottom-right-radius: 2px;
+}
+.create .fadd a{
+    display: block; 
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.task{
+    width: 620px;
+    margin: auto;
+    box-sizing: border-box;
+}
+.task .content{
+    background-color: #FFF2DC;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+.task .nofirst{
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+.task .complete{
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+.task .content hr{
+    height: 3px;
+    background-color: #c8c8c8;
+    border: none;
+    margin: 0px;
+}
+.task .nofirst hr{
+    height: 3px;
+    background-color: #c8c8c8;
+    border: none;
+}
+.task .content .title{
+    padding: 24px 32px 15px;
+}
+.task .nofirst .title{
+    padding: 24px 32px 15px;
+}
+.task .complete .title{
+    padding: 24px 32px 15px;
+}
+.task .content .title .check{
+    display: inline-block;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+}
+.task .nofirst .title .check{
+    display: inline-block;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+}
+.task .complete .title .check{
+    display: inline-block;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    border: none;
+}
+.task .content .title .mission{
+    color: #000000;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+.task .nofirst .title .mission{
+    color: #000000;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+.task .complete .title .mission{
+    color: #9B9B9B;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: line-through;
+}
+.task .content .title .star{
+    font-size: 24px;
+    float: right;   
+}
+.task .nofirst .title .star{
+    font-size: 24px;
+    float: right;   
+}
+.task .complete .title .star{
+    font-size: 24px;
+    float: right;   
+}
+.task .content .title .star .fa-star{
+    color: #F5A623;
+}
+.task .content .title .star .fa-pen{
+    padding-left: 20px; 
+    color: #000000;
+}
+.task .nofirst .title .star .fa-pen{
+    padding-left: 20px; 
+    color: #000000;
+}
+.task .complete .title .star .fa-pen{
+    padding-left: 20px; 
+    color: #000000;
+}
+.task .tab{
+    padding-left: 72px;
+    padding-bottom: 16px;
+    font-size: 16px;
+}
+.task .tab span, .task .tab svg{
+    margin-left: 8px;
+    vertical-align: middle;
+    color: #757575; 
+}
+.task .tab .date{
+    font-family: 'Roboto', sans-serif;
+}
+
+.task .content .cancel{
+    display: inline-block;
+    background-color: #FFFFFF;
+    width: 310px;
+    height: 60px;
+    text-align: center;
+    border-bottom-left-radius: 2px;
+}
+.task .content .cancel a{
+    display: block;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #D0021B;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.task .content .fadd{
+    display: inline-block;
+    background-color: #4A90E2;
+    width: 310px;
+    height: 60px;
+    text-align: center;
+    border-bottom-right-radius: 2px;
+}
+.task .content .fadd a{
+    display: block; 
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.task .nofirst .cancel{
+    display: inline-block;
+    background-color: #FFFFFF;
+    width: 310px;
+    height: 60px;
+    text-align: center;
+    border-bottom-left-radius: 2px;
+}
+.task .nofirst .cancel a{
+    display: block;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #D0021B;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.task .nofirst .fadd{
+    display: inline-block;
+    background-color: #4A90E2;
+    width: 310px;
+    height: 60px;
+    text-align: center;
+    border-bottom-right-radius: 2px;
+}
+.task .nofirst .fadd a{
+    display: block; 
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.task .content .hide {
+    display: none;
+}
+.task .nofirst .hide {
+    display: none;
+}
+.task .content .show{
+    display: block;
+}
+
+.task .content .title .editTitle{
+    color: #000000;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    width:248px;
+    border: none;
+    background-color: #FFF2DC;
+}
+.task .nofirst .title .editTitle{
+    color: #000000;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    width:248px;
+    border: none;
+    background-color: #F2F2F2;
+}
+.editTitle::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #000000;
+    opacity: 1; /* Firefox */
+  }

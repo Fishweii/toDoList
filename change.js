@@ -149,7 +149,7 @@ function load() {
     for (let i = 0; i < task.length; i++) {
         let content = '';
         if (task[i].fav == "true") {
-            content += '<section class="content"><section class="title"><input type="checkbox" class="check" id="check-' + i + '" onclick="clickCheck(' + i + ')"><span class="mission">'
+            content += '<section class="content" draggable="true" id="' + i + '"><section class="title"><input type="checkbox" class="check" id="check-' + i + '" onclick="clickCheck(' + i + ')"><span class="mission">'
                 + task[i].title + '</span><span class="star"><i class="fas fa-star" id="star-' + i + '" onclick="changeStar(' + i + ')"></i><i class="fas fa-pen" id="edit-' + i + '" onclick="edit(' + i + ')"></i></span></section>';
             if (task[i].date != "" && task[i].file != "" && task[i].comment != "") {
                 content += '<section class="tab"><i class="far fa-calendar-alt"></i><span class="date">' + task[i].date + '</span><i class="far fa-file"></i><i class="far fa-comment-dots"></i></section></section>';
@@ -167,7 +167,7 @@ function load() {
                 content += '<section class="tab"><i class="far fa-file"></i><i class="far fa-comment-dots"></i></section></section>';
             } else content += '</section>';
         } else if (task[i].fav == "false" && task[i].check != "true") {
-            content += '<section class="nofirst"><section class="title"><input type="checkbox" class="check" id="check-' + i + '" onclick="clickCheck(' + i + ')"><span class="mission">'
+            content += '<section class="nofirst" draggable="true" id="' + i + '"><section class="title"><input type="checkbox" class="check" id="check-' + i + '" onclick="clickCheck(' + i + ')"><span class="mission">'
                 + task[i].title + '</span><span class="star"><i class="far fa-star" id="star-' + i + '" onclick="changeStar(' + i + ')"></i><i class="fas fa-pen" id="edit-' + i + '" onclick="edit(' + i + ')"></i></span></section>';
             if (task[i].date != "" && task[i].file != "" && task[i].comment != "") {
                 content += '<section class="tab"><i class="far fa-calendar-alt"></i><span class="date">' + task[i].date + '</span><i class="far fa-file"></i><i class="far fa-comment-dots"></i></section></section>';
@@ -191,6 +191,7 @@ function load() {
         str += content;
     }
     main.innerHTML = str;
+    setDragEventListener()
 }
 
 function clickCheck(number) {
@@ -331,3 +332,52 @@ function compare(a, b) {
     if (a.check == "false" && b.check == "true") return -1;
     if (a.check == "true" && b.check == "true") return 0;
 }
+
+function setDragEventListener() {
+    let getcontent = document.getElementsByClassName('content');
+    for(let i = 0; i < getcontent.length; i++) {
+        getcontent[i].addEventListener('dragstart', drag);
+        getcontent[i].addEventListener('drop', dropped);
+        getcontent[i].addEventListener('dragenter', cancelDefault);
+        getcontent[i].addEventListener('dragover', cancelDefault);
+    }
+
+    let getnofirst= document.getElementsByClassName('nofirst');
+    for(let i = 0; i < getnofirst.length; i++) {
+        getnofirst[i].addEventListener('dragstart', drag);
+        getnofirst[i].addEventListener('drop', dropped);
+        getnofirst[i].addEventListener('dragenter', cancelDefault);
+        getnofirst[i].addEventListener('dragover', cancelDefault);
+    }
+}
+
+
+
+function drag(e) {
+    e.dataTransfer.setData('text/plain', e.target.id);      //抓取事件發生的元素的id
+}
+
+function dropped(e) {
+    cancelDefault(e);
+    
+    let oldId = e.dataTransfer.getData('text/plain');
+    let newId = e.currentTarget.id;
+    let oldIndex = Number(oldId); //e.target.id is string
+    let newIndex = Number(newId); 
+
+    if(oldIndex > newIndex) {
+        task.splice(newIndex, 0, task[oldIndex]);
+        task.splice(oldIndex + 1, 1);
+        load();
+    }else if(oldIndex < newIndex) {
+        task.splice(newIndex + 1, 0, task[oldIndex]);
+        task.splice(oldIndex, 1);
+        load();
+    }
+    
+}
+
+function cancelDefault(e) {
+    e.preventDefault();     //停止事件的預設動作
+    e.stopPropagation();    //阻止事件冒泡(重複發生)
+};

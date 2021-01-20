@@ -212,6 +212,7 @@ function edit(number) {
     let editId = document.getElementById("edit-" + number);
     let parId = editId.parentNode.parentNode.parentNode;
 
+    
     if (parId.lastChild.getAttribute("class") == "fadd") {
         editToggle(parId);
     }
@@ -224,7 +225,11 @@ function edit(number) {
         editTitle.setAttribute("placeholder", task[number].title);
         parId.firstChild.insertBefore(editTitle, parId.firstChild.lastChild);
         parId.getElementsByClassName("title")[0].getElementsByClassName("mission")[0].classList.toggle("hide");
-        parId.lastChild.setAttribute("class", "tab hide");
+        
+        if(parId.lastChild.getAttribute("class") == "tab"){
+            parId.lastChild.setAttribute("class", "tab hide");
+        }
+        
         let str = "";
         let hr = document.createElement("hr");
         parId.appendChild(hr);

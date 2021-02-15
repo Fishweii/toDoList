@@ -51,64 +51,99 @@ let tasking = document.getElementsByClassName("content");
 let nofirst = document.getElementsByClassName("nofirst");
 let create = document.getElementById("create");
 let add = document.getElementById("add");
+let mTab = document.getElementById("burger");
+let mTasks = document.getElementById("m-tasks");
+let mProgress = document.getElementById("m-progress");
+let mComplete = document.getElementById("m-complete");
+let mTitle = document.getElementById("m-navbar");
 tasks.classList.add("click");
 create.style.display = "none";
 
+function changeTabAll(tabName) {
+    progress.classList.remove("click");
+    tasks.classList.add("click");
+    complete.classList.remove("click");
+    progresshr.style.display = "none";
+    taskshr.style.display = "block";
+    completehr.style.display = "none";
+    create.style.display = "none";
+    add.style.display = "block";
+
+    mTab.checked = false;
+    mTitle.innerHTML = tabName;
+    for (let i = 0; i < completetask.length; i++) {
+        completetask[i].style.display = "block";
+    }
+    for (let i = 0; i < tasking.length; i++) {
+        tasking[i].style.display = "block";
+    }
+    for (let i = 0; i < nofirst.length; i++) {
+        nofirst[i].style.display = "block";
+    }
+}
+
+function changeTabInProgress(tabName) {
+    progress.classList.add("click");
+    tasks.classList.remove("click");
+    complete.classList.remove("click");
+    progresshr.style.display = "block";
+    taskshr.style.display = "none";
+    completehr.style.display = "none";
+    create.style.display = "none";
+    add.style.display = "block";
+
+    mTab.checked = false;
+    mTitle.innerHTML = tabName;
+    for (let i = 0; i < completetask.length; i++) {
+        completetask[i].style.display = "none";
+    }
+    for (let i = 0; i < tasking.length; i++) {
+        tasking[i].style.display = "block";
+    }
+    for (let i = 0; i < nofirst.length; i++) {
+        nofirst[i].style.display = "block";
+    }
+}
+
+function changeTabComplete(tabName) {
+    progress.classList.remove("click");
+    tasks.classList.remove("click");
+    complete.classList.add("click");
+    progresshr.style.display = "none";
+    taskshr.style.display = "none";
+    completehr.style.display = "block";
+    create.style.display = "none";
+    add.style.display = "block";
+
+    mTab.checked = false;
+    mTitle.innerHTML = tabName;
+    for (let i = 0; i < completetask.length; i++) {
+        completetask[i].style.display = "block";
+    }
+    for (let i = 0; i < tasking.length; i++) {
+        tasking[i].style.display = "none";
+    }
+    for (let i = 0; i < nofirst.length; i++) {
+        nofirst[i].style.display = "none";
+    }
+}
 function changeTab(id) {
     if (id == tasks) {
-        progress.classList.remove("click");
-        tasks.classList.add("click");
-        complete.classList.remove("click");
-        progresshr.style.display = "none";
-        taskshr.style.display = "block";
-        completehr.style.display = "none";
-        create.style.display = "none";
-        add.style.display = "block";
-        for (let i = 0; i < completetask.length; i++) {
-            completetask[i].style.display = "block";
-        }
-        for (let i = 0; i < tasking.length; i++) {
-            tasking[i].style.display = "block";
-        }
-        for (let i = 0; i < nofirst.length; i++) {
-            nofirst[i].style.display = "block";
-        }
+        changeTabAll("My Tasks");
     } else if (id == progress) {
-        progress.classList.add("click");
-        tasks.classList.remove("click");
-        complete.classList.remove("click");
-        progresshr.style.display = "block";
-        taskshr.style.display = "none";
-        completehr.style.display = "none";
-        create.style.display = "none";
-        add.style.display = "block";
-        for (let i = 0; i < completetask.length; i++) {
-            completetask[i].style.display = "none";
-        }
-        for (let i = 0; i < tasking.length; i++) {
-            tasking[i].style.display = "block";
-        }
-        for (let i = 0; i < nofirst.length; i++) {
-            nofirst[i].style.display = "block";
-        }
+        changeTabInProgress("In Progress");
     } else if (id == complete) {
-        progress.classList.remove("click");
-        tasks.classList.remove("click");
-        complete.classList.add("click");
-        progresshr.style.display = "none";
-        taskshr.style.display = "none";
-        completehr.style.display = "block";
-        create.style.display = "none";
-        add.style.display = "block";
-        for (let i = 0; i < completetask.length; i++) {
-            completetask[i].style.display = "block";
-        }
-        for (let i = 0; i < tasking.length; i++) {
-            tasking[i].style.display = "none";
-        }
-        for (let i = 0; i < nofirst.length; i++) {
-            nofirst[i].style.display = "none";
-        }
+        changeTabComplete("Complete");
+    }
+}
+
+function mChangeTab(id) {
+    if(id == "m-tasks") {
+        changeTabAll("My Tasks");
+    } else if(id == "m-progress") {
+        changeTabInProgress("In Progress");
+    } else if(id == "m-complete") {
+        changeTabComplete("Complete");
     }
 }
 

@@ -3,7 +3,6 @@ body{
 }
 .header{
     background-color: #4A90E2;
-    width: 100%;
     font-size: 0px;
 }
 .header .navbar{
@@ -11,7 +10,7 @@ body{
     height:76px;
     box-sizing: border-box;
 }
-.header .navbar ul{
+.header .navbar ul {
     display: flex;
     height: 100%;
     justify-content: center;
@@ -38,9 +37,40 @@ body{
     left: 30px;
     position: absolute;
 }
-.header .navbar ul li .click{
+.header .navbar ul:first-child li .click{
     color: #FFFFFF;
     font-weight: 500;
+}
+.navbar-m {
+    display: none;
+    text-align: center;
+}
+.m-navbar {
+    font-size: 24px;
+    color: #00408B;
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    height: 60px;
+    line-height: 60px;
+}
+#burger {
+    display: none;
+}
+.m-tasklist {
+    display: none;
+    text-align: center;
+    background-color: #83b8f8;
+}
+.m-tasklist a {
+    font-size: 20px;
+    color: #E1E1E1;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    line-height: 40px;
+}
+.navbar-m  a {
+    font-size: 24px;
+    height: 100%;
 }
 .addTask{
     width: 620px;
@@ -199,7 +229,7 @@ body{
     font-weight: 400;
     line-height: 24px;
 }
-.create .cancel{
+.cancel{
     display: inline-block;
     background-color: #FFFFFF;
     width: 310px;
@@ -207,7 +237,7 @@ body{
     text-align: center;
     border-bottom-left-radius: 2px;
 }
-.create .cancel a{
+.cancel a{
     display: block;
     font-size: 24px;
     font-family: 'Roboto', sans-serif;
@@ -217,7 +247,7 @@ body{
     top: 50%;
     transform: translateY(-50%);
 }
-.create .fadd{
+.fadd{
     display: inline-block;
     background-color: #4A90E2;
     width: 310px;
@@ -225,7 +255,7 @@ body{
     text-align: center;
     border-bottom-right-radius: 2px;
 }
-.create .fadd a{
+.fadd a{
     display: block; 
     font-size: 24px;
     font-family: 'Roboto', sans-serif;
@@ -359,78 +389,6 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-.task .content .cancel{
-    display: inline-block;
-    background-color: #FFFFFF;
-    width: 310px;
-    height: 60px;
-    text-align: center;
-    border-bottom-left-radius: 2px;
-}
-.task .content .cancel a{
-    display: block;
-    font-size: 24px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    color: #D0021B;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.task .content .fadd{
-    display: inline-block;
-    background-color: #4A90E2;
-    width: 310px;
-    height: 60px;
-    text-align: center;
-    border-bottom-right-radius: 2px;
-}
-.task .content .fadd a{
-    display: block; 
-    font-size: 24px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    color: #FFFFFF;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.task .nofirst .cancel{
-    display: inline-block;
-    background-color: #FFFFFF;
-    width: 310px;
-    height: 60px;
-    text-align: center;
-    border-bottom-left-radius: 2px;
-}
-.task .nofirst .cancel a{
-    display: block;
-    font-size: 24px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    color: #D0021B;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.task .nofirst .fadd{
-    display: inline-block;
-    background-color: #4A90E2;
-    width: 310px;
-    height: 60px;
-    text-align: center;
-    border-bottom-right-radius: 2px;
-}
-.task .nofirst .fadd a{
-    display: block; 
-    font-size: 24px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    color: #FFFFFF;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
 .task .content .hide {
     display: none;
 }
@@ -463,3 +421,54 @@ body{
     color: #000000;
     opacity: 1; /* Firefox */
   }
+@media screen and (max-width: 670px) {
+    .header .navbar {
+        display: none;
+    }
+    .navbar-m {
+        display: block;
+    }
+    #burger:checked + ul {
+        display: block;
+    }
+    .addTask {
+        width: 90%;
+    }
+    .task {
+        width: 90%;
+    }
+    .create {
+        width: 90%;
+    }
+    .create .title {
+        padding: 24px 20px 15px;
+    }
+    .create .title .mission {
+        width: 50%;
+    }
+    .create .title .star {
+        width: 76px;
+    }
+    .create .title .star .fa-pen {
+        padding-left: 8px;
+    }
+    .new .deadline .time {
+        margin-left: 23px;
+        margin-top: 16px;
+    }
+    .new .comment .input {
+        width: 100%;
+    }
+    .cancel {
+        width: 100%;
+    }
+    .fadd {
+        width: 100%;
+    }
+    .task .content .title .editTitle {
+        width: 50%;
+    }
+    .task .nofirst .title .editTitle {
+        width: 50%;
+    }
+}
